@@ -14,47 +14,41 @@
     />
     <meta
       property="og:image"
-      content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=75&format=webp"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=75&format=webp"
-      fetchpriority="high"
+      content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80"
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
     <title>NoirRide | Premium Car Rental</title>
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=1"
+    />
+    <link rel="shortcut icon" href="/favicon.ico?v=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Barlow:wght@400;700&display=swap"
-    />
-    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Barlow:wght@400;700&display=swap"
-      media="print"
-      onload="this.media = 'all'"
     />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <style>
-      body {
-        background: #000000;
-        color: #ffffff;
-      }
-    </style>
-    <link rel="preload" href="style.css" as="style" />
     <link rel="stylesheet" href="style.css" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -90,7 +84,7 @@
     </script>
   </head>
   <body>
-    <div id="cursor" class="custom-cursor" aria-hidden="true">
+    <div class="custom-cursor" aria-hidden="true">
       <span class="cursor-ring"></span>
       <span class="cursor-dot"></span>
     </div>
@@ -101,6 +95,7 @@
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with NoirRide concierge on WhatsApp"
+      data-i18n-aria-label="whatsappAria"
     >
       <span data-i18n="whatsapp">WHATSAPP</span>
     </a>
@@ -111,6 +106,7 @@
           class="nav-trigger magnetic"
           type="button"
           aria-label="Open navigation"
+          data-i18n-aria-label="openNavigation"
         >
           <span></span>
           <span></span>
@@ -118,15 +114,33 @@
           <strong data-i18n="menu">MENU</strong>
         </button>
 
-        <a class="brand-mark" href="#hero" aria-label="NoirRide home">
+        <a
+          class="brand-mark"
+          href="#hero"
+          aria-label="NoirRide home"
+          data-i18n-aria-label="brandHome"
+        >
           <span>NOIR</span>
           <span>RIDE</span>
         </a>
 
-        <nav class="header-tools" aria-label="Primary">
+        <nav
+          class="header-tools"
+          aria-label="Primary"
+          data-i18n-aria-label="primaryNav"
+        >
           <a href="#fleet" data-i18n="navFleet">FLEET</a>
           <a href="#booking" data-i18n="navBook">BOOK</a>
           <a href="#portal" data-i18n="navPortal">PORTAL</a>
+          <button
+            class="lang-switch magnetic"
+            id="header-language-switch"
+            type="button"
+            aria-label="Switch language"
+            data-i18n-aria-label="switchLanguage"
+          >
+            العربية
+          </button>
         </nav>
       </header>
 
@@ -154,9 +168,9 @@
                 PREMIUM CAR RENTAL / KSA READY
               </p>
               <h1 class="hero-title reveal">
-                DRIVE<br />
-                ARRIVAL<br />
-                INTO AN ART
+                <span data-i18n="heroTitleLine1">DRIVE</span><br />
+                <span data-i18n="heroTitleLine2">ARRIVAL</span><br />
+                <span data-i18n="heroTitleLine3">INTO AN ART</span>
               </h1>
               <p class="hero-copy reveal" data-i18n="heroCopy">
                 A luxury rental frontend engineered for elite booking journeys,
@@ -182,7 +196,7 @@
             <div class="hero-showcase reveal">
               <div class="hero-card hero-card-main">
                 <p data-i18n="flagshipModel">FLAGSHIP MODEL</p>
-                <h2>URBAN TITAN X</h2>
+                <h2 data-i18n="vehicleUrbanTitan">URBAN TITAN X</h2>
                 <span data-i18n="flagshipSpec"
                   >620 HP / AWD / NIGHT PACKAGE</span
                 >
@@ -268,6 +282,42 @@
                     <h3 data-i18n="gallery03Title">STAGED FOR ARRIVAL</h3>
                   </div>
                 </article>
+                <article class="swiper-slide gallery-slide gallery-four">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery04">04 / ENGINEERING DETAIL</p>
+                    <h3 data-i18n="gallery04Title">SIGNATURE LED GEOMETRY</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-five">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery05">05 / PERFORMANCE RUN</p>
+                    <h3 data-i18n="gallery05Title">AWD DYNAMIC THRUST</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-six">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery06">06 / DIGITAL COCKPIT</p>
+                    <h3 data-i18n="gallery06Title">PANORAMIC HUD INTERFACE</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-seven">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery07">07 / MATERIAL CRAFT</p>
+                    <h3 data-i18n="gallery07Title">MATTE CARBON FIBER WEAVE</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-eight">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery08">08 / ACOUSTIC PROFILE</p>
+                    <h3 data-i18n="gallery08Title">TITANIUM EXHAUST NOTE</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-nine">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery09">09 / LUXURY DEFINED</p>
+                    <h3 data-i18n="gallery09Title">PRIVATE CONCIERGE ACCESS</h3>
+                  </div>
+                </article>
               </div>
               <div class="gallery-controls">
                 <div class="gallery-pagination"></div>
@@ -303,8 +353,9 @@
               </div>
               <div
                 class="filter-row reveal"
-                role="group"
+                role="tablist"
                 aria-label="Fleet filters"
+                data-i18n-aria-label="fleetFilters"
               >
                 <button
                   class="filter-btn is-active magnetic"
@@ -352,22 +403,36 @@
                 <div class="fleet-media fleet-card-one"></div>
                 <div class="fleet-grid-copy">
                   <div class="fleet-grid-top">
-                    <p class="fleet-label">SUV / LUXURY</p>
-                    <span class="availability is-available"
+                    <p class="fleet-label" data-i18n="fleetLabel1">
+                      SUV / LUXURY
+                    </p>
+                    <span
+                      class="availability is-available"
+                      data-i18n="availabilityToday"
                       >AVAILABLE TODAY</span
                     >
                   </div>
-                  <h3>URBAN TITAN X</h3>
+                  <h3 data-i18n="vehicleUrbanTitan">URBAN TITAN X</h3>
                   <div class="spec-grid">
-                    <div><strong>620</strong><span>HP</span></div>
-                    <div><strong>305</strong><span>KM/H</span></div>
-                    <div><strong>HYBRID</strong><span>POWERTRAIN</span></div>
-                    <div><strong>AWD</strong><span>DRIVETRAIN</span></div>
+                    <div>
+                      <strong>620</strong><span data-i18n="specHp">HP</span>
+                    </div>
+                    <div>
+                      <strong>305</strong><span data-i18n="specKmh">KM/H</span>
+                    </div>
+                    <div>
+                      <strong data-i18n="specHybrid">HYBRID</strong
+                      ><span data-i18n="specPowertrain">POWERTRAIN</span>
+                    </div>
+                    <div>
+                      <strong>AWD</strong
+                      ><span data-i18n="specDrivetrain">DRIVETRAIN</span>
+                    </div>
                   </div>
                   <ul class="feature-list">
-                    <li>MASSAGE SEATS</li>
-                    <li>NIGHT VISION</li>
-                    <li>PANORAMIC ROOF</li>
+                    <li data-i18n="featureMassageSeats">MASSAGE SEATS</li>
+                    <li data-i18n="featureNightVision">NIGHT VISION</li>
+                    <li data-i18n="featurePanoramicRoof">PANORAMIC ROOF</li>
                   </ul>
                 </div>
               </article>
@@ -379,20 +444,36 @@
                 <div class="fleet-media fleet-card-two"></div>
                 <div class="fleet-grid-copy">
                   <div class="fleet-grid-top">
-                    <p class="fleet-label">SPORT / OPEN TOP</p>
-                    <span class="availability is-limited">LIMITED</span>
+                    <p class="fleet-label" data-i18n="fleetLabel2">
+                      SPORT / OPEN TOP
+                    </p>
+                    <span
+                      class="availability is-limited"
+                      data-i18n="availabilityLimited"
+                      >LIMITED</span
+                    >
                   </div>
-                  <h3>SOLARIS SPYDER</h3>
+                  <h3 data-i18n="vehicleSolaris">SOLARIS SPYDER</h3>
                   <div class="spec-grid">
-                    <div><strong>710</strong><span>HP</span></div>
-                    <div><strong>332</strong><span>KM/H</span></div>
-                    <div><strong>V8</strong><span>ENGINE</span></div>
-                    <div><strong>RWD</strong><span>DRIVETRAIN</span></div>
+                    <div>
+                      <strong>710</strong><span data-i18n="specHp">HP</span>
+                    </div>
+                    <div>
+                      <strong>332</strong><span data-i18n="specKmh">KM/H</span>
+                    </div>
+                    <div>
+                      <strong>V8</strong
+                      ><span data-i18n="specEngine">ENGINE</span>
+                    </div>
+                    <div>
+                      <strong>RWD</strong
+                      ><span data-i18n="specDrivetrain">DRIVETRAIN</span>
+                    </div>
                   </div>
                   <ul class="feature-list">
-                    <li>CARBON AERO</li>
-                    <li>TRACK MODE</li>
-                    <li>LAUNCH CONTROL</li>
+                    <li data-i18n="featureCarbonAero">CARBON AERO</li>
+                    <li data-i18n="featureTrackMode">TRACK MODE</li>
+                    <li data-i18n="featureLaunchControl">LAUNCH CONTROL</li>
                   </ul>
                 </div>
               </article>
@@ -404,20 +485,39 @@
                 <div class="fleet-media fleet-card-three"></div>
                 <div class="fleet-grid-copy">
                   <div class="fleet-grid-top">
-                    <p class="fleet-label">LUXURY / ELECTRIC</p>
-                    <span class="availability is-available">AVAILABLE</span>
+                    <p class="fleet-label" data-i18n="fleetLabel3">
+                      LUXURY / ELECTRIC
+                    </p>
+                    <span
+                      class="availability is-available"
+                      data-i18n="availabilityAvailable"
+                      >AVAILABLE</span
+                    >
                   </div>
-                  <h3>VELARIS S</h3>
+                  <h3 data-i18n="vehicleVelaris">VELARIS S</h3>
                   <div class="spec-grid">
-                    <div><strong>540</strong><span>HP</span></div>
-                    <div><strong>640</strong><span>KM RANGE</span></div>
-                    <div><strong>EV</strong><span>BATTERY</span></div>
-                    <div><strong>AWD</strong><span>DRIVETRAIN</span></div>
+                    <div>
+                      <strong>540</strong><span data-i18n="specHp">HP</span>
+                    </div>
+                    <div>
+                      <strong>640</strong
+                      ><span data-i18n="specKmRange">KM RANGE</span>
+                    </div>
+                    <div>
+                      <strong>EV</strong
+                      ><span data-i18n="specBattery">BATTERY</span>
+                    </div>
+                    <div>
+                      <strong>AWD</strong
+                      ><span data-i18n="specDrivetrain">DRIVETRAIN</span>
+                    </div>
                   </div>
                   <ul class="feature-list">
-                    <li>REAR LOUNGE</li>
-                    <li>SILENT CABIN</li>
-                    <li>EXECUTIVE TABLETS</li>
+                    <li data-i18n="featureRearLounge">REAR LOUNGE</li>
+                    <li data-i18n="featureSilentCabin">SILENT CABIN</li>
+                    <li data-i18n="featureExecutiveTablets">
+                      EXECUTIVE TABLETS
+                    </li>
                   </ul>
                 </div>
               </article>
@@ -429,22 +529,36 @@
                 <div class="fleet-media fleet-card-four"></div>
                 <div class="fleet-grid-copy">
                   <div class="fleet-grid-top">
-                    <p class="fleet-label">ELECTRIC / SUV</p>
-                    <span class="availability is-booked"
+                    <p class="fleet-label" data-i18n="fleetLabel4">
+                      ELECTRIC / SUV
+                    </p>
+                    <span
+                      class="availability is-booked"
+                      data-i18n="availabilityBookedWeekend"
                       >BOOKED THIS WEEKEND</span
                     >
                   </div>
-                  <h3>IONIC TERRA GT</h3>
+                  <h3 data-i18n="vehicleIonic">IONIC TERRA GT</h3>
                   <div class="spec-grid">
-                    <div><strong>480</strong><span>HP</span></div>
-                    <div><strong>250</strong><span>KM/H</span></div>
-                    <div><strong>EV</strong><span>BATTERY</span></div>
-                    <div><strong>AWD</strong><span>DRIVETRAIN</span></div>
+                    <div>
+                      <strong>480</strong><span data-i18n="specHp">HP</span>
+                    </div>
+                    <div>
+                      <strong>250</strong><span data-i18n="specKmh">KM/H</span>
+                    </div>
+                    <div>
+                      <strong>EV</strong
+                      ><span data-i18n="specBattery">BATTERY</span>
+                    </div>
+                    <div>
+                      <strong>AWD</strong
+                      ><span data-i18n="specDrivetrain">DRIVETRAIN</span>
+                    </div>
                   </div>
                   <ul class="feature-list">
-                    <li>FAST CHARGE</li>
-                    <li>AR DISPLAY</li>
-                    <li>AIR SUSPENSION</li>
+                    <li data-i18n="featureFastCharge">FAST CHARGE</li>
+                    <li data-i18n="featureArDisplay">AR DISPLAY</li>
+                    <li data-i18n="featureAirSuspension">AIR SUSPENSION</li>
                   </ul>
                 </div>
               </article>
@@ -468,10 +582,18 @@
               <label>
                 <span data-i18n="vehicleClass">VEHICLE CLASS</span>
                 <select id="vehicle-class">
-                  <option value="urban-titan-x">URBAN TITAN X</option>
-                  <option value="solaris-spyder">SOLARIS SPYDER</option>
-                  <option value="velaris-s">VELARIS S</option>
-                  <option value="ionic-terra-gt">IONIC TERRA GT</option>
+                  <option value="urban-titan-x" data-i18n="vehicleUrbanTitan">
+                    URBAN TITAN X
+                  </option>
+                  <option value="solaris-spyder" data-i18n="vehicleSolaris">
+                    SOLARIS SPYDER
+                  </option>
+                  <option value="velaris-s" data-i18n="vehicleVelaris">
+                    VELARIS S
+                  </option>
+                  <option value="ionic-terra-gt" data-i18n="vehicleIonic">
+                    IONIC TERRA GT
+                  </option>
                 </select>
               </label>
               <div class="double-grid">
@@ -511,6 +633,23 @@
                 </label>
               </div>
 
+              <div class="double-grid">
+                <label>
+                  <span data-i18n="currency">CURRENCY</span>
+                  <select id="currency-select">
+                    <option value="SAR">SAR</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </label>
+                <label class="lang-select-interfce">
+                  <span data-i18n="interface">INTERFACE</span>
+                  <select id="language-select">
+                    <option value="en" data-i18n="langEn">ENGLISH / LTR</option>
+                    <option value="ar" data-i18n="langAr">ARABIC / RTL</option>
+                  </select>
+                </label>
+              </div>
+
               <div class="addon-block">
                 <span data-i18n="premiumAddons">PREMIUM ADD-ONS</span>
                 <label class="checkbox-row">
@@ -536,23 +675,6 @@
                     data-addon-price="70"
                   />
                   <em data-i18n="addonChildSeat">CHILD SEAT</em>
-                </label>
-              </div>
-
-              <div class="double-grid">
-                <label>
-                  <span data-i18n="currency">CURRENCY</span>
-                  <select id="currency-select">
-                    <option value="SAR">SAR</option>
-                    <option value="USD">USD</option>
-                  </select>
-                </label>
-                <label>
-                  <span data-i18n="interface">INTERFACE</span>
-                  <select id="language-select">
-                    <option value="en" data-i18n="langEn">ENGLISH / LTR</option>
-                    <option value="ar" data-i18n="langAr">ARABIC / RTL</option>
-                  </select>
                 </label>
               </div>
 
@@ -606,7 +728,7 @@
                 <p class="fleet-label" data-i18n="activeBooking">
                   ACTIVE BOOKING
                 </p>
-                <h3>URBAN TITAN X</h3>
+                <h3 data-i18n="vehicleUrbanTitan">URBAN TITAN X</h3>
                 <ul class="portal-list">
                   <li data-i18n="portalPickup">
                     PICKUP: RIYADH / 21 APR / 18:00
@@ -622,9 +744,15 @@
                 </p>
                 <h3 data-i18n="lastReservations">LAST 3 RESERVATIONS</h3>
                 <ul class="portal-list">
-                  <li>SOLARIS SPYDER / DOHA / COMPLETED</li>
-                  <li>VELARIS S / RIYADH / COMPLETED</li>
-                  <li>IONIC TERRA GT / JEDDAH / COMPLETED</li>
+                  <li data-i18n="historyItem1">
+                    SOLARIS SPYDER / DOHA / COMPLETED
+                  </li>
+                  <li data-i18n="historyItem2">
+                    VELARIS S / RIYADH / COMPLETED
+                  </li>
+                  <li data-i18n="historyItem3">
+                    IONIC TERRA GT / JEDDAH / COMPLETED
+                  </li>
                 </ul>
               </article>
 
@@ -634,9 +762,11 @@
                 </p>
                 <h3 data-i18n="emailSms">EMAIL + SMS FLOW</h3>
                 <ul class="portal-list">
-                  <li>BOOKING CONFIRMATION READY</li>
-                  <li>PAYMENT RECEIPT READY</li>
-                  <li>RETURN REMINDER READY</li>
+                  <li data-i18n="notificationItem1">
+                    BOOKING CONFIRMATION READY
+                  </li>
+                  <li data-i18n="notificationItem2">PAYMENT RECEIPT READY</li>
+                  <li data-i18n="notificationItem3">RETURN REMINDER READY</li>
                 </ul>
               </article>
             </div>
@@ -738,18 +868,9 @@
       </main>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
-      defer
-    ></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
