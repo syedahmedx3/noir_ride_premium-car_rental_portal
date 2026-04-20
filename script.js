@@ -38,6 +38,7 @@ const insuranceSelect = document.querySelector("#insurance-tier");
 const seasonSelect = document.querySelector("#season-tier");
 const currencySelect = document.querySelector("#currency-select");
 const languageSelect = document.querySelector("#language-select");
+const headerLanguageSwitch = document.querySelector("#header-language-switch");
 const calendarStatus = document.querySelector("#calendar-status");
 const dailyRateEl = document.querySelector("#daily-rate");
 const rentalDaysEl = document.querySelector("#rental-days");
@@ -59,6 +60,12 @@ const magneticItems = document.querySelectorAll(
 
 const translations = {
   en: {
+    pageTitle: "NoirRide | Premium Car Rental",
+    whatsappAria: "Chat with NoirRide concierge on WhatsApp",
+    openNavigation: "Open navigation",
+    brandHome: "NoirRide home",
+    primaryNav: "Primary",
+    switchLanguage: "Switch language",
     menu: "MENU",
     whatsapp: "WHATSAPP",
     navFleet: "FLEET",
@@ -70,6 +77,9 @@ const translations = {
     clientPortal: "CLIENT PORTAL",
     apiSync: "API SYNC",
     heroEyebrow: "PREMIUM CAR RENTAL / KSA READY",
+    heroTitleLine1: "DRIVE",
+    heroTitleLine2: "ARRIVAL",
+    heroTitleLine3: "INTO AN ART",
     heroCopy:
       "A luxury rental frontend engineered for elite booking journeys, real-time fleet browsing, premium concierge support, and localization for the GCC.",
     bookVehicle: "BOOK A VEHICLE",
@@ -95,6 +105,17 @@ const translations = {
     gallery02Title: "EXECUTIVE NIGHT INTERIOR",
     gallery03: "03 / DELIVERY MOMENT",
     gallery03Title: "STAGED FOR ARRIVAL",
+    gallery04: "04 / AERODYNAMICS",
+    gallery04Title: "CARBON FIBER WAVE",
+    gallery05: "05 / PERFORMANCE",
+    gallery06: "06 / NIGHT PACKAGE",
+    gallery06Title: "STEALTH NOIR FINISH",
+    gallery07: "07 / COCKPIT",
+    gallery07Title: "PRECISION INSTRUMENTATION",
+    gallery08: "08 / LOGISTICS",
+    gallery08Title: "GLOBAL CONCIERGE FLOW",
+    gallery09: "09 / THE FINALE",
+    gallery09Title: "DEPARTURE IN STYLE",
     prev: "PREV",
     next: "NEXT",
     fleetGrid: "REAL-TIME FLEET GRID",
@@ -104,6 +125,39 @@ const translations = {
     filterSports: "SPORTS",
     filterSuvs: "SUVS",
     filterElectric: "ELECTRIC",
+    fleetFilters: "Fleet filters",
+    fleetLabel1: "SUV / LUXURY",
+    fleetLabel2: "SPORT / OPEN TOP",
+    fleetLabel3: "LUXURY / ELECTRIC",
+    fleetLabel4: "ELECTRIC / SUV",
+    availabilityToday: "AVAILABLE TODAY",
+    availabilityLimited: "LIMITED",
+    availabilityAvailable: "AVAILABLE",
+    availabilityBookedWeekend: "BOOKED THIS WEEKEND",
+    vehicleUrbanTitan: "URBAN TITAN X",
+    vehicleSolaris: "SOLARIS SPYDER",
+    vehicleVelaris: "VELARIS S",
+    vehicleIonic: "IONIC TERRA GT",
+    specHp: "HP",
+    specKmh: "KM/H",
+    specHybrid: "HYBRID",
+    specPowertrain: "POWERTRAIN",
+    specDrivetrain: "DRIVETRAIN",
+    specEngine: "ENGINE",
+    specKmRange: "KM RANGE",
+    specBattery: "BATTERY",
+    featureMassageSeats: "MASSAGE SEATS",
+    featureNightVision: "NIGHT VISION",
+    featurePanoramicRoof: "PANORAMIC ROOF",
+    featureCarbonAero: "CARBON AERO",
+    featureTrackMode: "TRACK MODE",
+    featureLaunchControl: "LAUNCH CONTROL",
+    featureRearLounge: "REAR LOUNGE",
+    featureSilentCabin: "SILENT CABIN",
+    featureExecutiveTablets: "EXECUTIVE TABLETS",
+    featureFastCharge: "FAST CHARGE",
+    featureArDisplay: "AR DISPLAY",
+    featureAirSuspension: "AIR SUSPENSION",
     bookingEngine: "BOOKING ENGINE",
     dynamicPricing: "DYNAMIC PRICING + AVAILABILITY",
     bookingCopy:
@@ -140,8 +194,14 @@ const translations = {
     portalStatus: "STATUS: DOCUMENTS VERIFIED",
     rentalHistory: "RENTAL HISTORY",
     lastReservations: "LAST 3 RESERVATIONS",
+    historyItem1: "SOLARIS SPYDER / DOHA / COMPLETED",
+    historyItem2: "VELARIS S / RIYADH / COMPLETED",
+    historyItem3: "IONIC TERRA GT / JEDDAH / COMPLETED",
     notifications: "NOTIFICATIONS",
     emailSms: "EMAIL + SMS FLOW",
+    notificationItem1: "BOOKING CONFIRMATION READY",
+    notificationItem2: "PAYMENT RECEIPT READY",
+    notificationItem3: "RETURN REMINDER READY",
     documentManagement: "DOCUMENT MANAGEMENT",
     secureVerification: "SECURE VERIFICATION ZONE",
     docsCopy:
@@ -176,6 +236,15 @@ const translations = {
     signatureMissing: "PLEASE DRAW A SIGNATURE FIRST.",
   },
   ar: {
+    pageTitle: "NoirRide | تأجير سيارات فاخر",
+    whatsappAria:
+      "\u0627\u0644\u062f\u0631\u062f\u0634\u0629 \u0645\u0639 \u0643\u0648\u0646\u0633\u064a\u064a\u0631\u062c NoirRide \u0639\u0628\u0631 \u0648\u0627\u062a\u0633\u0627\u0628",
+    openNavigation: "\u0641\u062a\u062d \u0627\u0644\u062a\u0646\u0642\u0644",
+    brandHome: "\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629 NoirRide",
+    primaryNav:
+      "\u0627\u0644\u062a\u0646\u0642\u0644 \u0627\u0644\u0631\u0626\u064a\u0633\u064a",
+    switchLanguage:
+      "\u062a\u0628\u062f\u064a\u0644 \u0627\u0644\u0644\u063a\u0629",
     menu: "\u0627\u0644\u0642\u0627\u0626\u0645\u0629",
     whatsapp: "\u0648\u0627\u062a\u0633\u0627\u0628",
     navFleet: "\u0627\u0644\u0623\u0633\u0637\u0648\u0644",
@@ -191,6 +260,9 @@ const translations = {
     apiSync: "\u0645\u0632\u0627\u0645\u0646\u0629 API",
     heroEyebrow:
       "\u062a\u0623\u062c\u064a\u0631 \u0633\u064a\u0627\u0631\u0627\u062a \u0641\u0627\u062e\u0631 / \u062c\u0627\u0647\u0632 \u0644\u0644\u0633\u0639\u0648\u062f\u064a\u0629",
+    heroTitleLine1: "\u0642\u062f",
+    heroTitleLine2: "\u0627\u0644\u0648\u0635\u0648\u0644",
+    heroTitleLine3: "\u0643\u0641\u0646",
     heroCopy:
       "\u0648\u0627\u062c\u0647\u0629 \u062a\u0623\u062c\u064a\u0631 \u0641\u0627\u062e\u0631\u0629 \u0645\u0635\u0645\u0645\u0629 \u0644\u0631\u062d\u0644\u0627\u062a \u062d\u062c\u0632 \u0631\u0627\u0642\u064a\u0629 \u0648\u0627\u0633\u062a\u0639\u0631\u0627\u0636 \u0627\u0644\u0623\u0633\u0637\u0648\u0644 \u0648\u062f\u0639\u0645 \u0643\u0648\u0646\u0633\u064a\u064a\u0631\u062c \u0645\u062a\u0648\u0627\u0635\u0644 \u0648\u062a\u0648\u0637\u064a\u0646 \u0644\u0644\u062e\u0644\u064a\u062c.",
     bookVehicle: "\u0627\u062d\u062c\u0632 \u0633\u064a\u0627\u0631\u0629",
@@ -232,6 +304,28 @@ const translations = {
       "03 / \u0644\u062d\u0638\u0629 \u0627\u0644\u062a\u0633\u0644\u064a\u0645",
     gallery03Title:
       "\u0645\u0647\u064a\u0623\u0629 \u0644\u0644\u0648\u0635\u0648\u0644",
+    gallery04:
+      "04 / \u0627\u0644\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u0627 \u0627\u0644\u0647\u0648\u0627\u0626\u064a\u0629",
+    gallery04Title:
+      "\u0645\u0648\u062c\u0629 \u0623\u0644\u064a\u0627\u0641 \u0627\u0644\u0643\u0631\u0628\u0648\u0646",
+    gallery05: "05 / \u0627\u0644\u0623\u062f\u0627\u0621",
+    gallery05Title:
+      "\u0647\u0646\u062f\u0633\u0629 \u0627\u0644\u0642\u0648\u0629 \u0627\u0644\u062e\u0627\u0645",
+    gallery06:
+      "06 / \u0627\u0644\u0628\u0627\u0642\u0629 \u0627\u0644\u0644\u064a\u0644\u064a\u0629",
+    gallery06Title:
+      "\u0644\u0645\u0633\u0627\u062a \u0627\u0644\u0646\u0648\u0627\u0631 \u0627\u0644\u062e\u0641\u064a\u0629",
+    gallery07:
+      "07 / \u0645\u0642\u0635\u0648\u0631\u0629 \u0627\u0644\u0642\u064a\u0627\u062f\u0629",
+    gallery07Title:
+      "\u0623\u062c\u0647\u0632\u0629 \u0642\u064a\u0627\u0633 \u062f\u0642\u064a\u0642\u0629",
+    gallery08:
+      "08 / \u0627\u0644\u0644\u0648\u062c\u0633\u062a\u064a\u0627\u062a",
+    gallery08Title:
+      "\u062a\u062f\u0641\u0642 \u0627\u0644\u0643\u0648\u0646\u0633\u064a\u064a\u0631\u062c \u0627\u0644\u0639\u0627\u0644\u0645\u064a",
+    gallery09: "09 / \u0627\u0644\u062e\u062a\u0627\u0645",
+    gallery09Title:
+      "\u0645\u063a\u0627\u062f\u0631\u0629 \u0628\u0623\u0646\u0627\u0642\u0629",
     prev: "\u0627\u0644\u0633\u0627\u0628\u0642",
     next: "\u0627\u0644\u062a\u0627\u0644\u064a",
     fleetGrid:
@@ -243,6 +337,58 @@ const translations = {
     filterSports: "\u0631\u064a\u0627\u0636\u064a",
     filterSuvs: "\u062f\u0641\u0639 \u0631\u0628\u0627\u0639\u064a",
     filterElectric: "\u0643\u0647\u0631\u0628\u0627\u0626\u064a",
+    fleetFilters:
+      "\u0641\u0644\u0627\u062a\u0631 \u0627\u0644\u0623\u0633\u0637\u0648\u0644",
+    fleetLabel1:
+      "\u062f\u0641\u0639 \u0631\u0628\u0627\u0639\u064a / \u0641\u0627\u062e\u0631",
+    fleetLabel2:
+      "\u0631\u064a\u0627\u0636\u064a / \u0645\u0643\u0634\u0648\u0641",
+    fleetLabel3:
+      "\u0641\u0627\u062e\u0631 / \u0643\u0647\u0631\u0628\u0627\u0626\u064a",
+    fleetLabel4:
+      "\u0643\u0647\u0631\u0628\u0627\u0626\u064a / \u062f\u0641\u0639 \u0631\u0628\u0627\u0639\u064a",
+    availabilityToday:
+      "\u0645\u062a\u0627\u062d \u0627\u0644\u064a\u0648\u0645",
+    availabilityLimited: "\u0645\u062d\u062f\u0648\u062f",
+    availabilityAvailable: "\u0645\u062a\u0627\u062d",
+    availabilityBookedWeekend:
+      "\u0645\u062d\u062c\u0648\u0632 \u0647\u0630\u0627 \u0639\u0637\u0644\u0629 \u0627\u0644\u0623\u0633\u0628\u0648\u0639",
+    vehicleUrbanTitan:
+      "\u0627\u0648\u0631\u0628\u0627\u0646 \u062a\u0627\u064a\u062a\u0627\u0646 X",
+    vehicleSolaris:
+      "\u0633\u0648\u0644\u0627\u0631\u064a\u0633 \u0633\u0628\u0627\u064a\u062f\u0631",
+    vehicleVelaris: "\u0641\u064a\u0644\u0627\u0631\u064a\u0633 S",
+    vehicleIonic: "\u0622\u064a\u0648\u0646\u0643 \u062a\u064a\u0631\u0627 GT",
+    specHp: "\u062d\u0635\u0627\u0646",
+    specKmh: "\u0643\u0645/\u0633",
+    specHybrid: "\u0647\u062c\u064a\u0646",
+    specPowertrain:
+      "\u0646\u0638\u0627\u0645 \u0627\u0644\u062d\u0631\u0643\u0629",
+    specDrivetrain: "\u0646\u0638\u0627\u0645 \u0627\u0644\u062f\u0641\u0639",
+    specEngine: "\u0627\u0644\u0645\u062d\u0631\u0643",
+    specKmRange: "\u0645\u062f\u0649 \u0643\u0645",
+    specBattery: "\u0627\u0644\u0628\u0637\u0627\u0631\u064a\u0629",
+    featureMassageSeats:
+      "\u0645\u0642\u0627\u0639\u062f \u0645\u0633\u0627\u062c",
+    featureNightVision:
+      "\u0631\u0624\u064a\u0629 \u0644\u064a\u0644\u064a\u0629",
+    featurePanoramicRoof:
+      "\u0633\u0642\u0641 \u0628\u0627\u0646\u0648\u0631\u0627\u0645\u064a",
+    featureCarbonAero:
+      "\u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a\u0627 \u0643\u0631\u0628\u0648\u0646\u064a\u0629",
+    featureTrackMode: "\u0648\u0636\u0639 \u0627\u0644\u062d\u0644\u0628\u0629",
+    featureLaunchControl:
+      "\u062a\u062d\u0643\u0645 \u0627\u0644\u0627\u0646\u0637\u0644\u0627\u0642",
+    featureRearLounge:
+      "\u0635\u0627\u0644\u0648\u0646 \u062e\u0644\u0641\u064a",
+    featureSilentCabin:
+      "\u0645\u0642\u0635\u0648\u0631\u0629 \u0647\u0627\u062f\u0626\u0629",
+    featureExecutiveTablets:
+      "\u0623\u062c\u0647\u0632\u0629 \u062a\u0646\u0641\u064a\u0630\u064a\u0629",
+    featureFastCharge: "\u0634\u062d\u0646 \u0633\u0631\u064a\u0639",
+    featureArDisplay: "\u0639\u0631\u0636 \u0645\u0639\u0632\u0632",
+    featureAirSuspension:
+      "\u062a\u0639\u0644\u064a\u0642 \u0647\u0648\u0627\u0626\u064a",
     bookingEngine: "\u0645\u062d\u0631\u0643 \u0627\u0644\u062d\u062c\u0632",
     dynamicPricing:
       "\u062a\u0633\u0639\u064a\u0631 \u062f\u064a\u0646\u0627\u0645\u064a\u0643\u064a + \u062a\u0648\u0641\u0631",
@@ -299,9 +445,21 @@ const translations = {
       "\u0633\u062c\u0644 \u0627\u0644\u0625\u064a\u062c\u0627\u0631",
     lastReservations:
       "\u0622\u062e\u0631 3 \u062d\u062c\u0648\u0632\u0627\u062a",
+    historyItem1:
+      "\u0633\u0648\u0644\u0627\u0631\u064a\u0633 \u0633\u0628\u0627\u064a\u062f\u0631 / \u0627\u0644\u062f\u0648\u062d\u0629 / \u0645\u0643\u062a\u0645\u0644",
+    historyItem2:
+      "\u0641\u064a\u0644\u0627\u0631\u064a\u0633 S / \u0627\u0644\u0631\u064a\u0627\u0636 / \u0645\u0643\u062a\u0645\u0644",
+    historyItem3:
+      "\u0622\u064a\u0648\u0646\u0643 \u062a\u064a\u0631\u0627 GT / \u062c\u062f\u0629 / \u0645\u0643\u062a\u0645\u0644",
     notifications: "\u0627\u0644\u0625\u0634\u0639\u0627\u0631\u0627\u062a",
     emailSms:
       "\u062a\u062f\u0641\u0642 \u0627\u0644\u0628\u0631\u064a\u062f + \u0627\u0644\u0631\u0633\u0627\u0626\u0644",
+    notificationItem1:
+      "\u062a\u0623\u0643\u064a\u062f \u0627\u0644\u062d\u062c\u0632 \u062c\u0627\u0647\u0632",
+    notificationItem2:
+      "\u0625\u064a\u0635\u0627\u0644 \u0627\u0644\u062f\u0641\u0639 \u062c\u0627\u0647\u0632",
+    notificationItem3:
+      "\u062a\u0630\u0643\u064a\u0631 \u0627\u0644\u0625\u0639\u0627\u062f\u0629 \u062c\u0627\u0647\u0632",
     documentManagement:
       "\u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0645\u0633\u062a\u0646\u062f\u0627\u062a",
     secureVerification:
@@ -356,12 +514,31 @@ const translations = {
 };
 
 const translatedNodes = Array.from(document.querySelectorAll("[data-i18n]"));
+const translatedAriaNodes = Array.from(
+  document.querySelectorAll("[data-i18n-aria-label]"),
+);
+
+const syncLanguageUi = (locale) => {
+  languageSelect.value = locale;
+  if (headerLanguageSwitch) {
+    headerLanguageSwitch.textContent = locale === "ar" ? "EN" : "العربية";
+  }
+};
 
 const applyTranslations = (locale) => {
+  document.title = translations[locale].pageTitle;
+
   translatedNodes.forEach((node) => {
     const key = node.dataset.i18n;
     if (translations[locale][key]) {
       node.textContent = translations[locale][key];
+    }
+  });
+
+  translatedAriaNodes.forEach((node) => {
+    const key = node.dataset.i18nAriaLabel;
+    if (translations[locale][key]) {
+      node.setAttribute("aria-label", translations[locale][key]);
     }
   });
 };
@@ -489,8 +666,15 @@ languageSelect?.addEventListener("change", () => {
   document.body.classList.toggle("is-rtl", isArabic);
   document.documentElement.lang = isArabic ? "ar" : "en";
   document.documentElement.dir = isArabic ? "rtl" : "ltr";
+  syncLanguageUi(languageSelect.value);
   applyTranslations(languageSelect.value);
   updatePricing();
+});
+
+headerLanguageSwitch?.addEventListener("click", () => {
+  const nextLocale = languageSelect.value === "en" ? "ar" : "en";
+  languageSelect.value = nextLocale;
+  languageSelect.dispatchEvent(new Event("change"));
 });
 
 uploadInput?.addEventListener("change", () => {
@@ -566,10 +750,16 @@ if (signatureCanvas) {
 }
 
 const gallerySwiper = new Swiper(".gallery-swiper", {
+  rtl: document.documentElement.dir === "rtl",
   slidesPerView: 1,
   spaceBetween: 20,
   speed: 900,
   loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
   pagination: {
     el: ".gallery-pagination",
     clickable: true,
@@ -578,6 +768,8 @@ const gallerySwiper = new Swiper(".gallery-swiper", {
     nextEl: ".gallery-next",
     prevEl: ".gallery-prev",
   },
+  grabCursor: true,
+  effect: "slide",
 });
 
 if (window.gsap) {
@@ -666,32 +858,7 @@ const today = new Date().toISOString().split("T")[0];
 pickupInput.min = today;
 returnInput.min = today;
 setStatus("statusPrompt");
+syncLanguageUi(languageSelect.value);
 applyTranslations(languageSelect.value);
+signatureStatus.textContent = translations[languageSelect.value].signatureEmpty;
 updatePricing();
-
-function initAnimations() {
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-  if (isMobile) {
-    gsap.from(".reveal", {
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-      stagger: 0.1,
-    });
-    return;
-  }
-
-  gsap.utils.toArray(".reveal").forEach((element) => {
-    gsap.from(element, {
-      y: 40,
-      opacity: 0,
-      duration: 0.9,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: element,
-        start: "top 86%",
-      },
-    });
-  });
-}
