@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NoirRide is a premium car rental frontend with cinematic fleet browsing, dynamic pricing, concierge booking, document upload, and KSA-ready localization."
+    />
+    <meta property="og:title" content="NoirRide | Premium Car Rental" />
+    <meta
+      property="og:description"
+      content="Luxury, sports, SUV, and electric rentals with premium booking flow and concierge-grade experience."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=75&format=webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=75&format=webp"
+      fetchpriority="high"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title>NoirRide | Premium Car Rental</title>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Barlow:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Barlow:wght@400;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      body {
+        background: #000000;
+        color: #ffffff;
+      }
+    </style>
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CarRental",
+        "name": "NoirRide",
+        "url": "https://example.com/noirride",
+        "areaServed": ["Riyadh", "Jeddah", "Khobar", "Doha", "Dubai"],
+        "telephone": "+966500000000",
+        "priceRange": "$$$",
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Car",
+              "name": "Urban Titan X",
+              "brand": "NoirRide Exclusive"
+            },
+            "priceCurrency": "SAR",
+            "price": "1462"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Car",
+              "name": "Solaris Spyder",
+              "brand": "NoirRide Exclusive"
+            },
+            "priceCurrency": "SAR",
+            "price": "1950"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="cursor" class="custom-cursor" aria-hidden="true">
+      <span class="cursor-ring"></span>
+      <span class="cursor-dot"></span>
+    </div>
+
+    <a
+      class="whatsapp-float magnetic"
+      href="https://wa.me/966500000000"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat with NoirRide concierge on WhatsApp"
+    >
+      <span data-i18n="whatsapp">WHATSAPP</span>
+    </a>
+
+    <div class="page-shell">
+      <header class="site-header glass">
+        <button
+          class="nav-trigger magnetic"
+          type="button"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong data-i18n="menu">MENU</strong>
+        </button>
+
+        <a class="brand-mark" href="#hero" aria-label="NoirRide home">
+          <span>NOIR</span>
+          <span>RIDE</span>
+        </a>
+
+        <nav class="header-tools" aria-label="Primary">
+          <a href="#fleet" data-i18n="navFleet">FLEET</a>
+          <a href="#booking" data-i18n="navBook">BOOK</a>
+          <a href="#portal" data-i18n="navPortal">PORTAL</a>
+        </nav>
+      </header>
+
+      <aside class="side-panel" aria-hidden="true">
+        <div class="panel-heading">
+          <p>NOIRRIDE</p>
+          <span data-i18n="privateAccess">PRIVATE ACCESS</span>
+        </div>
+        <a href="#fleet" data-i18n="fleetIndex">FLEET INDEX</a>
+        <a href="#pricing" data-i18n="priceEngine">PRICE ENGINE</a>
+        <a href="#portal" data-i18n="clientPortal">CLIENT PORTAL</a>
+        <a href="#integration" data-i18n="apiSync">API SYNC</a>
+      </aside>
+
+      <main>
+        <section class="hero" id="hero">
+          <div class="hero-media">
+            <div class="hero-overlay"></div>
+            <div class="hero-grid"></div>
+          </div>
+
+          <div class="hero-content container">
+            <div class="hero-copy-block">
+              <p class="eyebrow reveal" data-i18n="heroEyebrow">
+                PREMIUM CAR RENTAL / KSA READY
+              </p>
+              <h1 class="hero-title reveal">
+                DRIVE<br />
+                ARRIVAL<br />
+                INTO AN ART
+              </h1>
+              <p class="hero-copy reveal" data-i18n="heroCopy">
+                A luxury rental frontend engineered for elite booking journeys,
+                real-time fleet browsing, premium concierge support, and
+                localization for the GCC.
+              </p>
+              <div class="hero-actions reveal">
+                <a
+                  class="btn btn-accent magnetic"
+                  href="#booking"
+                  data-i18n="bookVehicle"
+                  >BOOK A VEHICLE</a
+                >
+                <a
+                  class="btn btn-ghost magnetic"
+                  href="#gallery"
+                  data-i18n="viewGallery"
+                  >VIEW GALLERY</a
+                >
+              </div>
+            </div>
+
+            <div class="hero-showcase reveal">
+              <div class="hero-card hero-card-main">
+                <p data-i18n="flagshipModel">FLAGSHIP MODEL</p>
+                <h2>URBAN TITAN X</h2>
+                <span data-i18n="flagshipSpec"
+                  >620 HP / AWD / NIGHT PACKAGE</span
+                >
+              </div>
+              <div class="hero-card hero-card-mini">
+                <p data-i18n="conciergeStatus">CONCIERGE STATUS</p>
+                <h3 data-i18n="live247">LIVE 24/7</h3>
+                <span data-i18n="paymentStack"
+                  >WHATSAPP / APPLE PAY / STC PAY</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat reveal">
+              <span>120+</span>
+              <p data-i18n="luxuryVehicles">LUXURY VEHICLES</p>
+            </div>
+            <div class="stat reveal">
+              <span>18</span>
+              <p data-i18n="cityDeliveryHubs">CITY DELIVERY HUBS</p>
+            </div>
+            <div class="stat reveal">
+              <span>2</span>
+              <p data-i18n="currenciesRtl">CURRENCIES + RTL UI</p>
+            </div>
+            <div class="stat reveal">
+              <span>API</span>
+              <p data-i18n="syncReady">SYNC READY ARCHITECTURE</p>
+            </div>
+          </div>
+
+          <div class="hero-progress"><span></span></div>
+        </section>
+
+        <section class="section intro" id="experience">
+          <div class="container intro-layout">
+            <div class="section-heading reveal">
+              <p class="eyebrow" data-i18n="engineeringStandard">
+                ENGINEERING STANDARD
+              </p>
+              <h2 data-i18n="modularCinematic">
+                MODULAR, CINEMATIC, SCALE-READY
+              </h2>
+            </div>
+            <div class="intro-copy reveal">
+              <p data-i18n="introCopy">
+                The experience is structured like a high-end booking product,
+                not a flat brochure. Fleet data, pricing logic, availability,
+                uploads, localization, payments, notifications, and backend
+                bridges are separated into focused modules for cleaner scaling.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section gallery-section" id="gallery">
+          <div class="container">
+            <div class="section-heading reveal">
+              <p class="eyebrow" data-i18n="immersiveGallery">
+                IMMERSIVE GALLERY
+              </p>
+              <h2 data-i18n="swipeMachine">SWIPE THROUGH THE MACHINE</h2>
+            </div>
+            <div class="swiper gallery-swiper reveal">
+              <div class="swiper-wrapper">
+                <article class="swiper-slide gallery-slide gallery-one">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery01">01 / EXTERIOR ANGLE</p>
+                    <h3 data-i18n="gallery01Title">AGGRESSIVE FRONT PROFILE</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-two">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery02">02 / CABIN FOCUS</p>
+                    <h3 data-i18n="gallery02Title">EXECUTIVE NIGHT INTERIOR</h3>
+                  </div>
+                </article>
+                <article class="swiper-slide gallery-slide gallery-three">
+                  <div class="gallery-copy">
+                    <p data-i18n="gallery03">03 / DELIVERY MOMENT</p>
+                    <h3 data-i18n="gallery03Title">STAGED FOR ARRIVAL</h3>
+                  </div>
+                </article>
+              </div>
+              <div class="gallery-controls">
+                <div class="gallery-pagination"></div>
+                <div class="fleet-nav">
+                  <button
+                    class="gallery-prev magnetic"
+                    type="button"
+                    data-i18n="prev"
+                  >
+                    PREV
+                  </button>
+                  <button
+                    class="gallery-next magnetic"
+                    type="button"
+                    data-i18n="next"
+                  >
+                    NEXT
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section fleet-section" id="fleet">
+          <div class="container">
+            <div class="fleet-head">
+              <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="fleetGrid">
+                  REAL-TIME FLEET GRID
+                </p>
+                <h2 data-i18n="filterByClass">FILTER BY CLASS</h2>
+              </div>
+              <div
+                class="filter-row reveal"
+                role="group"
+                aria-label="Fleet filters"
+              >
+                <button
+                  class="filter-btn is-active magnetic"
+                  data-filter="all"
+                  type="button"
+                >
+                  <span data-i18n="filterAll">ALL</span>
+                </button>
+                <button
+                  class="filter-btn magnetic"
+                  data-filter="luxury"
+                  type="button"
+                >
+                  <span data-i18n="filterLuxury">LUXURY</span>
+                </button>
+                <button
+                  class="filter-btn magnetic"
+                  data-filter="sports"
+                  type="button"
+                >
+                  <span data-i18n="filterSports">SPORTS</span>
+                </button>
+                <button
+                  class="filter-btn magnetic"
+                  data-filter="suv"
+                  type="button"
+                >
+                  <span data-i18n="filterSuvs">SUVS</span>
+                </button>
+                <button
+                  class="filter-btn magnetic"
+                  data-filter="electric"
+                  type="button"
+                >
+                  <span data-i18n="filterElectric">ELECTRIC</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="fleet-grid" id="fleet-grid">
+              <article
+                class="fleet-grid-card reveal"
+                data-category="suv luxury"
+              >
+                <div class="fleet-media fleet-card-one"></div>
+                <div class="fleet-grid-copy">
+                  <div class="fleet-grid-top">
+                    <p class="fleet-label">SUV / LUXURY</p>
+                    <span class="availability is-available"
+                      >AVAILABLE TODAY</span
+                    >
+                  </div>
+                  <h3>URBAN TITAN X</h3>
+                  <div class="spec-grid">
+                    <div><strong>620</strong><span>HP</span></div>
+                    <div><strong>305</strong><span>KM/H</span></div>
+                    <div><strong>HYBRID</strong><span>POWERTRAIN</span></div>
+                    <div><strong>AWD</strong><span>DRIVETRAIN</span></div>
+                  </div>
+                  <ul class="feature-list">
+                    <li>MASSAGE SEATS</li>
+                    <li>NIGHT VISION</li>
+                    <li>PANORAMIC ROOF</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article
+                class="fleet-grid-card reveal"
+                data-category="sports luxury"
+              >
+                <div class="fleet-media fleet-card-two"></div>
+                <div class="fleet-grid-copy">
+                  <div class="fleet-grid-top">
+                    <p class="fleet-label">SPORT / OPEN TOP</p>
+                    <span class="availability is-limited">LIMITED</span>
+                  </div>
+                  <h3>SOLARIS SPYDER</h3>
+                  <div class="spec-grid">
+                    <div><strong>710</strong><span>HP</span></div>
+                    <div><strong>332</strong><span>KM/H</span></div>
+                    <div><strong>V8</strong><span>ENGINE</span></div>
+                    <div><strong>RWD</strong><span>DRIVETRAIN</span></div>
+                  </div>
+                  <ul class="feature-list">
+                    <li>CARBON AERO</li>
+                    <li>TRACK MODE</li>
+                    <li>LAUNCH CONTROL</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article
+                class="fleet-grid-card reveal"
+                data-category="luxury electric"
+              >
+                <div class="fleet-media fleet-card-three"></div>
+                <div class="fleet-grid-copy">
+                  <div class="fleet-grid-top">
+                    <p class="fleet-label">LUXURY / ELECTRIC</p>
+                    <span class="availability is-available">AVAILABLE</span>
+                  </div>
+                  <h3>VELARIS S</h3>
+                  <div class="spec-grid">
+                    <div><strong>540</strong><span>HP</span></div>
+                    <div><strong>640</strong><span>KM RANGE</span></div>
+                    <div><strong>EV</strong><span>BATTERY</span></div>
+                    <div><strong>AWD</strong><span>DRIVETRAIN</span></div>
+                  </div>
+                  <ul class="feature-list">
+                    <li>REAR LOUNGE</li>
+                    <li>SILENT CABIN</li>
+                    <li>EXECUTIVE TABLETS</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article
+                class="fleet-grid-card reveal"
+                data-category="suv electric"
+              >
+                <div class="fleet-media fleet-card-four"></div>
+                <div class="fleet-grid-copy">
+                  <div class="fleet-grid-top">
+                    <p class="fleet-label">ELECTRIC / SUV</p>
+                    <span class="availability is-booked"
+                      >BOOKED THIS WEEKEND</span
+                    >
+                  </div>
+                  <h3>IONIC TERRA GT</h3>
+                  <div class="spec-grid">
+                    <div><strong>480</strong><span>HP</span></div>
+                    <div><strong>250</strong><span>KM/H</span></div>
+                    <div><strong>EV</strong><span>BATTERY</span></div>
+                    <div><strong>AWD</strong><span>DRIVETRAIN</span></div>
+                  </div>
+                  <ul class="feature-list">
+                    <li>FAST CHARGE</li>
+                    <li>AR DISPLAY</li>
+                    <li>AIR SUSPENSION</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section booking-panel" id="booking">
+          <div class="container booking-layout">
+            <div class="booking-copy reveal">
+              <p class="eyebrow" data-i18n="bookingEngine">BOOKING ENGINE</p>
+              <h2 data-i18n="dynamicPricing">DYNAMIC PRICING + AVAILABILITY</h2>
+              <p data-i18n="bookingCopy">
+                Choose vehicle class, date range, insurance, add-ons, currency,
+                and language direction. The calculator updates instantly and
+                blocks dates already reserved in the demo dataset.
+              </p>
+            </div>
+
+            <form class="booking-form reveal" id="booking-form">
+              <label>
+                <span data-i18n="vehicleClass">VEHICLE CLASS</span>
+                <select id="vehicle-class">
+                  <option value="urban-titan-x">URBAN TITAN X</option>
+                  <option value="solaris-spyder">SOLARIS SPYDER</option>
+                  <option value="velaris-s">VELARIS S</option>
+                  <option value="ionic-terra-gt">IONIC TERRA GT</option>
+                </select>
+              </label>
+              <div class="double-grid">
+                <label>
+                  <span data-i18n="pickupDate">PICKUP DATE</span>
+                  <input id="pickup-date" type="date" />
+                </label>
+                <label>
+                  <span data-i18n="returnDate">RETURN DATE</span>
+                  <input id="return-date" type="date" />
+                </label>
+              </div>
+              <div class="double-grid">
+                <label>
+                  <span data-i18n="insuranceTier">INSURANCE TIER</span>
+                  <select id="insurance-tier">
+                    <option value="standard" data-i18n="insuranceStandard">
+                      STANDARD
+                    </option>
+                    <option value="premium" data-i18n="insurancePremium">
+                      PREMIUM
+                    </option>
+                    <option value="platinum" data-i18n="insurancePlatinum">
+                      PLATINUM
+                    </option>
+                  </select>
+                </label>
+                <label>
+                  <span data-i18n="demandWindow">DEMAND WINDOW</span>
+                  <select id="season-tier">
+                    <option value="standard" data-i18n="seasonStandard">
+                      STANDARD
+                    </option>
+                    <option value="peak" data-i18n="seasonPeak">PEAK</option>
+                    <option value="event" data-i18n="seasonEvent">EVENT</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="addon-block">
+                <span data-i18n="premiumAddons">PREMIUM ADD-ONS</span>
+                <label class="checkbox-row">
+                  <input
+                    type="checkbox"
+                    value="airport"
+                    data-addon-price="220"
+                  />
+                  <em data-i18n="addonAirport">AIRPORT MEET &amp; GREET</em>
+                </label>
+                <label class="checkbox-row">
+                  <input
+                    type="checkbox"
+                    value="chauffeur"
+                    data-addon-price="650"
+                  />
+                  <em data-i18n="addonChauffeur">PRIVATE CHAUFFEUR</em>
+                </label>
+                <label class="checkbox-row">
+                  <input
+                    type="checkbox"
+                    value="child-seat"
+                    data-addon-price="70"
+                  />
+                  <em data-i18n="addonChildSeat">CHILD SEAT</em>
+                </label>
+              </div>
+
+              <div class="double-grid">
+                <label>
+                  <span data-i18n="currency">CURRENCY</span>
+                  <select id="currency-select">
+                    <option value="SAR">SAR</option>
+                    <option value="USD">USD</option>
+                  </select>
+                </label>
+                <label>
+                  <span data-i18n="interface">INTERFACE</span>
+                  <select id="language-select">
+                    <option value="en" data-i18n="langEn">ENGLISH / LTR</option>
+                    <option value="ar" data-i18n="langAr">ARABIC / RTL</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="calendar-status" id="calendar-status">
+                SELECT DATES TO CHECK AVAILABILITY.
+              </div>
+
+              <div class="price-card" id="pricing">
+                <div class="price-row">
+                  <span data-i18n="dailyRate">DAILY RATE</span>
+                  <strong id="daily-rate">SAR 0</strong>
+                </div>
+                <div class="price-row">
+                  <span data-i18n="rentalDays">RENTAL DAYS</span>
+                  <strong id="rental-days">0</strong>
+                </div>
+                <div class="price-row">
+                  <span data-i18n="addons">ADD-ONS</span>
+                  <strong id="addons-total">SAR 0</strong>
+                </div>
+                <div class="price-row total-row">
+                  <span data-i18n="estimatedTotal">ESTIMATED TOTAL</span>
+                  <strong id="grand-total">SAR 0</strong>
+                </div>
+              </div>
+
+              <button
+                class="btn btn-accent magnetic"
+                type="submit"
+                data-i18n="confirmBooking"
+              >
+                CONFIRM BOOKING REQUEST
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="section portal-section" id="portal">
+          <div class="container portal-layout">
+            <div class="section-heading reveal">
+              <p class="eyebrow" data-i18n="securePortal">
+                HEADLESS SECURE PORTAL
+              </p>
+              <h2 data-i18n="manageBookings">
+                MANAGE BOOKINGS LIKE A PRIVATE CLIENT APP
+              </h2>
+            </div>
+
+            <div class="portal-grid">
+              <article class="portal-card reveal">
+                <p class="fleet-label" data-i18n="activeBooking">
+                  ACTIVE BOOKING
+                </p>
+                <h3>URBAN TITAN X</h3>
+                <ul class="portal-list">
+                  <li data-i18n="portalPickup">
+                    PICKUP: RIYADH / 21 APR / 18:00
+                  </li>
+                  <li data-i18n="portalReturn">RETURN: 24 APR / 18:00</li>
+                  <li data-i18n="portalStatus">STATUS: DOCUMENTS VERIFIED</li>
+                </ul>
+              </article>
+
+              <article class="portal-card reveal">
+                <p class="fleet-label" data-i18n="rentalHistory">
+                  RENTAL HISTORY
+                </p>
+                <h3 data-i18n="lastReservations">LAST 3 RESERVATIONS</h3>
+                <ul class="portal-list">
+                  <li>SOLARIS SPYDER / DOHA / COMPLETED</li>
+                  <li>VELARIS S / RIYADH / COMPLETED</li>
+                  <li>IONIC TERRA GT / JEDDAH / COMPLETED</li>
+                </ul>
+              </article>
+
+              <article class="portal-card reveal">
+                <p class="fleet-label" data-i18n="notifications">
+                  NOTIFICATIONS
+                </p>
+                <h3 data-i18n="emailSms">EMAIL + SMS FLOW</h3>
+                <ul class="portal-list">
+                  <li>BOOKING CONFIRMATION READY</li>
+                  <li>PAYMENT RECEIPT READY</li>
+                  <li>RETURN REMINDER READY</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section docs-section">
+          <div class="container docs-layout">
+            <div class="docs-copy reveal">
+              <p class="eyebrow" data-i18n="documentManagement">
+                DOCUMENT MANAGEMENT
+              </p>
+              <h2 data-i18n="secureVerification">SECURE VERIFICATION ZONE</h2>
+              <p data-i18n="docsCopy">
+                Upload driver's license, passport or iqama, and payment
+                verification documents before delivery. This demo keeps files on
+                the client side and previews selected names for integration.
+              </p>
+            </div>
+
+            <div class="docs-panel reveal">
+              <label class="upload-zone">
+                <input id="doc-upload" type="file" multiple />
+                <span data-i18n="dropFiles">DROP FILES OR CLICK TO UPLOAD</span>
+                <small data-i18n="uploadDocs"
+                  >DRIVER'S LICENSE / PASSPORT / IQAMA / CREDIT CARD</small
+                >
+              </label>
+              <ul class="upload-list" id="upload-list"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section signature-section">
+          <div class="container signature-layout">
+            <div class="signature-copy reveal">
+              <p class="eyebrow" data-i18n="digitalSignature">
+                DIGITAL SIGNATURE
+              </p>
+              <h2 data-i18n="signBeforeDelivery">SIGN BEFORE DELIVERY</h2>
+              <p data-i18n="signatureCopy">
+                The agreement module includes a client-side signature canvas to
+                demonstrate electronic acceptance before vehicle handover.
+              </p>
+            </div>
+            <div class="signature-panel reveal">
+              <canvas id="signature-pad" width="640" height="260"></canvas>
+              <div class="signature-actions">
+                <button
+                  class="btn btn-ghost magnetic"
+                  id="clear-signature"
+                  type="button"
+                >
+                  <span data-i18n="clear">CLEAR</span>
+                </button>
+                <button
+                  class="btn btn-accent magnetic"
+                  id="save-signature"
+                  type="button"
+                >
+                  <span data-i18n="saveSignature">SAVE SIGNATURE</span>
+                </button>
+              </div>
+              <p class="signature-status" id="signature-status">
+                NO SIGNATURE SAVED YET.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section support-section">
+          <div class="container support-grid">
+            <article class="feature-card reveal">
+              <p class="eyebrow" data-i18n="liveConcierge">LIVE CONCIERGE</p>
+              <h3 data-i18n="floatingWhatsapp">FLOATING WHATSAPP ACCESS</h3>
+              <p data-i18n="liveConciergeCopy">
+                High-priority support stays visible throughout the experience
+                for booking updates, delivery changes, and urgent requests.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <p class="eyebrow" data-i18n="paymentVault">PAYMENT VAULT</p>
+              <h3 data-i18n="appleStcReady">APPLE PAY + STC PAY READY</h3>
+              <p data-i18n="paymentVaultCopy">
+                Payment cards are structured as integration slots for secure
+                deposit workflows once your processor is connected.
+              </p>
+            </article>
+            <article class="feature-card reveal" id="integration">
+              <p class="eyebrow" data-i18n="backendBridge">BACKEND BRIDGE</p>
+              <h3 data-i18n="odooSync">ODOO / API / MAINTENANCE SYNC</h3>
+              <p data-i18n="backendBridgeCopy">
+                Fleet attendance, maintenance windows, and financial logs are
+                represented as clean frontend hooks for live backend binding.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
