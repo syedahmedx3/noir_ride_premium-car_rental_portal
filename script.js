@@ -669,6 +669,29 @@ languageSelect?.addEventListener("change", () => {
   syncLanguageUi(languageSelect.value);
   applyTranslations(languageSelect.value);
   updatePricing();
+
+  gallerySwiper.destroy(true, true);
+
+  const swiperEl = document.querySelector(".gallery-swiper");
+  swiperEl.style.opacity = "1";
+  swiperEl.style.transform = "translateY(0px)";
+
+  gallerySwiper = new Swiper(".gallery-swiper", {
+    rtl: isArabic,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 900,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    pagination: { el: ".gallery-pagination", clickable: true },
+    navigation: { nextEl: ".gallery-next", prevEl: ".gallery-prev" },
+    grabCursor: true,
+    effect: "slide",
+  });
 });
 
 headerLanguageSwitch?.addEventListener("click", () => {
@@ -749,7 +772,7 @@ if (signatureCanvas) {
   });
 }
 
-const gallerySwiper = new Swiper(".gallery-swiper", {
+let gallerySwiper = new Swiper(".gallery-swiper", {
   rtl: document.documentElement.dir === "rtl",
   slidesPerView: 1,
   spaceBetween: 20,
