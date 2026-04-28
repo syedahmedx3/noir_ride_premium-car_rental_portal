@@ -1,5 +1,5 @@
 # 🏎️ NOIR RIDE | Premium Car Rental <span style="float:right;">[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/syedahmedhasanx3/) [![Portfolio](https://img.shields.io/badge/Portfolio-Live-00df9a)](https://syedahmedx3.github.io/Portfolio/)</span> 
-A high-performance, elite booking frontend engineered for luxury car rentals. NOIR RIDE blends a cinematic user experience with enterprise-grade logic, featuring real-time pricing, digital signatures, and a modular architecture ready for Odoo backend integration.
+A High-performance, elite booking frontend engineered for luxury car rentals. NOIR RIDE blends a cinematic user experience with enterprise-grade logic, featuring real-time pricing, digital signatures, and a modular architecture ready for Odoo backend integration.
 
 ## ✨ Project Overview
 
