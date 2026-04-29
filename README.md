@@ -55,4 +55,4 @@ This frontend is built with API-Sync Ready architecture. The bookingForm and ren
 ## 🤝 Contributing
 * Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 ##
-If you find this project useful for your high-end development workflow, please give it a ⭐!
+If you find this project useful for your high-end development workflow, please give it a ⭐
